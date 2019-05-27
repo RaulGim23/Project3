@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="bazadatecontabilitateDataSet2" targetNamespace="http://tempuri.org/bazadatecontabilitateDataSet2.xsd" xmlns:mstns="http://tempuri.org/bazadatecontabilitateDataSet2.xsd" xmlns="http://tempuri.org/bazadatecontabilitateDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bazadatecontabilitateConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bazadatecontabilitateConnectionString (Settings)" PropertyReference="ApplicationSettings.Contabilitate.Properties.Settings.GlobalReference.Default.bazadatecontabilitateConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FacturiTableAdapter" GeneratorDataComponentClassName="FacturiTableAdapter" Name="Facturi" UserDataComponentName="FacturiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="bazadatecontabilitateConnectionString (Settings)" DbObjectName="Facturi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Seria, Numar, NrCrt, Denumire, UnitateMasura, Cantitate, PretUnitar, ValoareRON, ValoareTVA FROM Facturi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Seria" DataSetColumn="Seria" />
+              <Mapping SourceColumn="Numar" DataSetColumn="Numar" />
+              <Mapping SourceColumn="NrCrt" DataSetColumn="NrCrt" />
+              <Mapping SourceColumn="Denumire" DataSetColumn="Denumire" />
+              <Mapping SourceColumn="UnitateMasura" DataSetColumn="UnitateMasura" />
+              <Mapping SourceColumn="Cantitate" DataSetColumn="Cantitate" />
+              <Mapping SourceColumn="PretUnitar" DataSetColumn="PretUnitar" />
+              <Mapping SourceColumn="ValoareRON" DataSetColumn="ValoareRON" />
+              <Mapping SourceColumn="ValoareTVA" DataSetColumn="ValoareTVA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="bazadatecontabilitateDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bazadatecontabilitateDataSet2" msprop:Generator_UserDSName="bazadatecontabilitateDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Facturi" msprop:Generator_TableClassName="FacturiDataTable" msprop:Generator_TableVarName="tableFacturi" msprop:Generator_TablePropName="Facturi" msprop:Generator_RowDeletingName="FacturiRowDeleting" msprop:Generator_RowChangingName="FacturiRowChanging" msprop:Generator_RowEvHandlerName="FacturiRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturiRowDeleted" msprop:Generator_UserTableName="Facturi" msprop:Generator_RowChangedName="FacturiRowChanged" msprop:Generator_RowEvArgName="FacturiRowChangeEvent" msprop:Generator_RowClassName="FacturiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seria" msprop:Generator_ColumnVarNameInTable="columnSeria" msprop:Generator_ColumnPropNameInRow="Seria" msprop:Generator_ColumnPropNameInTable="SeriaColumn" msprop:Generator_UserColumnName="Seria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numar" msprop:Generator_ColumnVarNameInTable="columnNumar" msprop:Generator_ColumnPropNameInRow="Numar" msprop:Generator_ColumnPropNameInTable="NumarColumn" msprop:Generator_UserColumnName="Numar" type="xs:int" minOccurs="0" />
+              <xs:element name="NrCrt" msprop:Generator_ColumnVarNameInTable="columnNrCrt" msprop:Generator_ColumnPropNameInRow="NrCrt" msprop:Generator_ColumnPropNameInTable="NrCrtColumn" msprop:Generator_UserColumnName="NrCrt" type="xs:int" minOccurs="0" />
+              <xs:element name="Denumire" msprop:Generator_ColumnVarNameInTable="columnDenumire" msprop:Generator_ColumnPropNameInRow="Denumire" msprop:Generator_ColumnPropNameInTable="DenumireColumn" msprop:Generator_UserColumnName="Denumire" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitateMasura" msprop:Generator_ColumnVarNameInTable="columnUnitateMasura" msprop:Generator_ColumnPropNameInRow="UnitateMasura" msprop:Generator_ColumnPropNameInTable="UnitateMasuraColumn" msprop:Generator_UserColumnName="UnitateMasura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantitate" msprop:Generator_ColumnVarNameInTable="columnCantitate" msprop:Generator_ColumnPropNameInRow="Cantitate" msprop:Generator_ColumnPropNameInTable="CantitateColumn" msprop:Generator_UserColumnName="Cantitate" type="xs:int" minOccurs="0" />
+              <xs:element name="PretUnitar" msprop:Generator_ColumnVarNameInTable="columnPretUnitar" msprop:Generator_ColumnPropNameInRow="PretUnitar" msprop:Generator_ColumnPropNameInTable="PretUnitarColumn" msprop:Generator_UserColumnName="PretUnitar" type="xs:int" minOccurs="0" />
+              <xs:element name="ValoareRON" msprop:Generator_ColumnVarNameInTable="columnValoareRON" msprop:Generator_ColumnPropNameInRow="ValoareRON" msprop:Generator_ColumnPropNameInTable="ValoareRONColumn" msprop:Generator_UserColumnName="ValoareRON" type="xs:int" minOccurs="0" />
+              <xs:element name="ValoareTVA" msprop:Generator_ColumnVarNameInTable="columnValoareTVA" msprop:Generator_ColumnPropNameInRow="ValoareTVA" msprop:Generator_ColumnPropNameInTable="ValoareTVAColumn" msprop:Generator_UserColumnName="ValoareTVA" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

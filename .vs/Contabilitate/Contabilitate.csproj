@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D2E5402-6460-464C-A030-624F9922685B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Contabilitate</RootNamespace>
+    <AssemblyName>Contabilitate</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Desktop\Bunifu Ui Winform 1.10.0.0\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bazadatecontabilitateDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazadatecontabilitateDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadatecontabilitateDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="checkBox1\Checked.cs" />
+    <Compile Include="datasetfinal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetfinal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Facturi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Facturi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inregistrare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inregistrare.Designer.cs">
+      <DependentUpon>Inregistrare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Proiect\Balanta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Balanta.Designer.cs">
+      <DependentUpon>Balanta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\BalantaRap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\BalantaRap.Designer.cs">
+      <DependentUpon>BalantaRap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Bilant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Bilant.Designer.cs">
+      <DependentUpon>Bilant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\BilantRap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\BilantRap.Designer.cs">
+      <DependentUpon>BilantRap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Proiect\FactRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\FactRep.Designer.cs">
+      <DependentUpon>FactRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Factura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\fisacont.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\fisacont.Designer.cs">
+      <DependentUpon>fisacont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\fisecontrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\fisecontrep.Designer.cs">
+      <DependentUpon>fisecontrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Management.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Management.Designer.cs">
+      <DependentUpon>Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\NRCDRap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\NRCDRap.Designer.cs">
+      <DependentUpon>NRCDRap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Regcasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\Regcasa.Designer.cs">
+      <DependentUpon>Regcasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Reginventar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\Reginventar.Designer.cs">
+      <DependentUpon>Reginventar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Registrubanca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Registrubanca.Designer.cs">
+      <DependentUpon>Registrubanca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Registrucasa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Registrucasa.Designer.cs">
+      <DependentUpon>Registrucasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Registruinventar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Registruinventar.Designer.cs">
+      <DependentUpon>Registruinventar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Registrujurnal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\Registrujurnal.Designer.cs">
+      <DependentUpon>Registrujurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\Regjurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proiect\Regjurnal.Designer.cs">
+      <DependentUpon>Regjurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proiect\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Proiect\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regbanca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regbanca.Designer.cs">
+      <DependentUpon>Regbanca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inregistrare.resx">
+      <DependentUpon>Inregistrare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management.rdlc" />
+    <EmbeddedResource Include="Proiect\Balanta.resx">
+      <DependentUpon>Balanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\BalantaRap.resx">
+      <DependentUpon>BalantaRap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Bilant.resx">
+      <DependentUpon>Bilant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\BilantRap.resx">
+      <DependentUpon>BilantRap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\FactRep.resx">
+      <DependentUpon>FactRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\fisacont.resx">
+      <DependentUpon>fisacont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\fisecont.rdlc" />
+    <EmbeddedResource Include="Proiect\fisecontrep.resx">
+      <DependentUpon>fisecontrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Management.resx">
+      <DependentUpon>Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\NRCDRap.resx">
+      <DependentUpon>NRCDRap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Regcasa.resx">
+      <DependentUpon>Regcasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Reginventar.resx">
+      <DependentUpon>Reginventar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Registrubanca.rdlc" />
+    <EmbeddedResource Include="Proiect\Registrubanca.resx">
+      <DependentUpon>Registrubanca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Registrucasa.rdlc" />
+    <EmbeddedResource Include="Proiect\Registrucasa.resx">
+      <DependentUpon>Registrucasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Registruinventar.rdlc" />
+    <EmbeddedResource Include="Proiect\Registruinventar.resx">
+      <DependentUpon>Registruinventar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Registrujurnal.resx">
+      <DependentUpon>Registrujurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Regjurnal.resx">
+      <DependentUpon>Regjurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\Report1.rdlc" />
+    <EmbeddedResource Include="Proiect\Report2.rdlc" />
+    <EmbeddedResource Include="Proiect\Report4.rdlc" />
+    <EmbeddedResource Include="Proiect\Report5.rdlc" />
+    <EmbeddedResource Include="Proiect\Report6.rdlc" />
+    <EmbeddedResource Include="Proiect\Report7.rdlc" />
+    <EmbeddedResource Include="Proiect\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proiect\UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Regbanca.resx">
+      <DependentUpon>Regbanca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report3.rdlc" />
+    <None Include="bazadatecontabilitateDataSet.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet.xss">
+      <DependentUpon>bazadatecontabilitateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet1.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet1.xss">
+      <DependentUpon>bazadatecontabilitateDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet10.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet10.xss">
+      <DependentUpon>bazadatecontabilitateDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet2.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet2.xss">
+      <DependentUpon>bazadatecontabilitateDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet3.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet3.xss">
+      <DependentUpon>bazadatecontabilitateDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet4.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet4.xss">
+      <DependentUpon>bazadatecontabilitateDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet5.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet5.xss">
+      <DependentUpon>bazadatecontabilitateDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet6.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet6.xss">
+      <DependentUpon>bazadatecontabilitateDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet7.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet7.xss">
+      <DependentUpon>bazadatecontabilitateDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet8.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet8.xss">
+      <DependentUpon>bazadatecontabilitateDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet9.xsc">
+      <DependentUpon>bazadatecontabilitateDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="bazadatecontabilitateDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazadatecontabilitateDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadatecontabilitateDataSet9.xss">
+      <DependentUpon>bazadatecontabilitateDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="datasetfinal.xsc">
+      <DependentUpon>datasetfinal.xsd</DependentUpon>
+    </None>
+    <None Include="datasetfinal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetfinal.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetfinal.xss">
+      <DependentUpon>datasetfinal.xsd</DependentUpon>
+    </None>
+    <None Include="Facturi.xsc">
+      <DependentUpon>Facturi.xsd</DependentUpon>
+    </None>
+    <None Include="Facturi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Facturi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Facturi.xss">
+      <DependentUpon>Facturi.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-accounting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\031-Revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-accounting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\034-investment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\022-Ledger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\036-transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-bookkeeping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\032-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\017-piggy bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-account-button-with-user-inside %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-account-button-with-user-inside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-account-button-with-user-inside %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-account-button-with-user-inside %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bazadatecontabilitate.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
